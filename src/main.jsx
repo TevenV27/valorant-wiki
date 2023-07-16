@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Navbar from './components/navbar.jsx'
+import Navbar from './components/Navbar.jsx'
 import Card from './components/Card.jsx'
 import Search from './components/Search.jsx'
 import './index.css'
