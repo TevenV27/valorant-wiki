@@ -1,0 +1,39 @@
+.nav-box{
+    background-color: #0E121D;
+    padding: 5px 50px 5px 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.logo-img{
+    width: auto;
+    height: 50px;
+    cursor: pointer;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+}
+.navbar-list{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    list-style: none;
+   
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+li{
+    padding: 10px;
+}
+li:hover{
+    background: #181d2d;
+}
