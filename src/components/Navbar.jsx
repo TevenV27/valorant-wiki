@@ -1,7 +1,8 @@
 import React from 'react'
 import '../stylesheets/navbar.css'
-
+//navbar
 export default function navbar() {
+
   return (
     <div className="nav-box">
       <img className="logo-img" src="../../public\valorant-Logo.png" alt="" />
@@ -12,7 +13,6 @@ export default function navbar() {
           <li><a href="#">Maps</a></li>
           <li><a href="#">Weapons</a></li>
           <li><a href="#">Stats</a></li>
-          
         </ul>
       </div>
     </div>
