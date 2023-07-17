@@ -1,33 +1,110 @@
-.img-map{
+.img-map {
     width: 500px;
     height: auto;
 }
-.container-map{
-    padding: 100px 0px 1000px 0px;
+
+.container-map {
+    padding: 0px 0px 100px 0px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    height: 100vh;
     gap: 30px;
+
 }
-.card-map{
-    width: 500px;
+
+.container-map::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.container-map::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.container-map::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.card-map {
+    width: 400px;
     background-color: #19232cf3;
     border-radius: 25px;
     overflow: hidden;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+
 }
-h2{
+
+.card-map:hover {
+    transform: translatey(-20px);
+    -webkit-transform: translatey(-20px);
+    -moz-transform: translatey(-20px);
+    background-color: #080d12;
+}
+
+h2 {
     width: 100%;
     display: flex;
     justify-content: center;
-    
+
 }
+
 .loader {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 400px;
+}
 
-  }
+.search-box {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 55px 50px 55px;
+}
+
+.b-types {
+    color: white;
+    font-size: 1.4rem;
+    font-family: monospace;
+    padding: 0px 20px 0px 20px;
+    background: none;
+    border: none;
+    background-color: #19232cf3;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    cursor: pointer;
+
+}
+
+.b-types:hover {
+    background-color: #080d12;
+
+}
+
+.types-box {
+    display: flex;
+    gap: 10px;
+}
+
+h1 {
+    padding: 0px;
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #19232cf3;
+    width: 400px;
+    border: none;
+    border-radius: 15px;
+    padding: 40px;
+}

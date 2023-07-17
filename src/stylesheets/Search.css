@@ -7,13 +7,13 @@
     padding: 10px 0px 20px 0px;
     
 }
-.search-box{
-    width: 85%;
+.searchAgent-box{
+    width: 100%;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 0px 50px 0px;
+    padding: 50px 55px 50px 55px;
 
 }
 .search-agent{
@@ -39,7 +39,6 @@
     display: flex;
     gap: 10px;
 
-
 }
 .b-roles{
     color: white;
@@ -51,6 +50,7 @@
     background-color: #19232cf3;
     border-radius: 10px;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .b-roles:hover{
     background-color: #080d12;

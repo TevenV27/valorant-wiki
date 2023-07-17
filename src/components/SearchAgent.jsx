@@ -6,7 +6,7 @@ export default function Search() {
   const [rol, setRol] = useState("");
   return (
     <div className='container'>
-      <div className='search-box'>
+      <div className='searchAgent-box'>
 
         <div className='roles-box'>
           <button className='b-roles' onClick={() => { setRol("Duelist") }}>

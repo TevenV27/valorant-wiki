@@ -1,18 +1,70 @@
-.container-card{
+.container-card {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
 }
-.card{
+
+.card {
     width: 300px;
     height: autopx;
-    background-color: #19232cf3;
+    background-color: #19232c;
     padding: 10px;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     cursor: pointer;
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
 }
-.card:hover{
-    background-color: #121a21f3;
+
+.card:hover {
+    background-color: #171f26;
+    transform: translatey(-20px);
+    -webkit-transform: translatey(-20px);
+    -moz-transform: translatey(-20px);
+
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rol-agent {
+    width: 30px;
+}
+
+.info-agent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.name-agent {
+    width: 200px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.modalbox-agent {
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    background: #19232cf5;
+    box-shadow: rgb(7, 7, 7) 0px 20px 30px -10px;
+    border-radius: 15px;
+    padding: 40px;
+    
+}
+.fullimg-agent{
+    width: 400px;
+    height: auto;
 }
