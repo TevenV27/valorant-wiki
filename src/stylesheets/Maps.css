@@ -3,7 +3,7 @@
     height: auto;
 }
 .container-map{
-    padding-top: 100px;
+    padding: 100px 0px 1000px 0px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -29,6 +29,5 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 800px;
 
   }
