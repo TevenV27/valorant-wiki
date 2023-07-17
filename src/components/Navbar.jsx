@@ -6,7 +6,7 @@ export default function navbar() {
 
   return (
     <div className="nav-box">
-      <img className="logo-img" src="src\images\valorant-Logo.png" alt="" />
+      <img className="logo-img" src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Valorant_logo_-_pink_color_version_%28cropped%29.png" alt="" />
       <h1 className="title">VALORANT WIKI</h1>
       <nav>
         <ul className="navbar-list">
