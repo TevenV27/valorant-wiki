@@ -1,13 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Navbar from './components/Navbar.jsx'
-import Card from './components/Card.jsx'
-import Search from './components/Search.jsx'
+import { BrowserRouter, Route } from 'react-router-dom';
+import App from './App.jsx'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Navbar />
-    <Search />
+    <App />
   </React.StrictMode>,
 )

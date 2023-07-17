@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../stylesheets/Search.css'
 import Card from './Card.jsx'
+
 export default function Search() {
   const [rol, setRol] = useState("");
   return (

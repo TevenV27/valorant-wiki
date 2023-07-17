@@ -1,5 +1,6 @@
 import React from 'react'
 import '../stylesheets/Navbar.css'
+import { Link } from 'react-router-dom';
 //navbar
 export default function navbar() {
 
@@ -7,14 +8,14 @@ export default function navbar() {
     <div className="nav-box">
       <img className="logo-img" src="../../public\valorant-Logo.png" alt="" />
       <h1 className="title">VALORANT WIKI</h1>
-      <div>
-        <ul class="navbar-list">
-          <li><a href="#">Agents</a></li>
-          <li><a href="#">Maps</a></li>
-          <li><a href="#">Weapons</a></li>
-          <li><a href="#">Stats</a></li>
+      <nav>
+        <ul className="navbar-list">
+          <li><Link className='link' to="/">Agents</Link></li>
+          <li><Link className='link' to="/maps">Maps</Link></li>
+          <li><Link className='link' to="/weapons">Weapons</Link></li>
+          <li><Link className='link' to="/stats">Stats</Link></li>
         </ul>
-      </div>
+      </nav>
     </div>
   )
 }

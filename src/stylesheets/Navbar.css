@@ -20,7 +20,7 @@
 .navbar-list{
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 10px;
     list-style: none;
    
 }
@@ -31,9 +31,17 @@ a{
     font-weight: 500;
     cursor: pointer;
 }
-li{
-    padding: 10px;
+
+
+.link{
+    user-select: none;
+    padding: 20px 15px 20px 25px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 15px;
 }
-li:hover{
+.link:hover{
     background: #181d2d;
 }
