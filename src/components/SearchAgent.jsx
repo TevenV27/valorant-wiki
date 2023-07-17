@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import '../stylesheets/Search.css'
 import Card from './Card.jsx'
-
+import 'animate.css';
 export default function Search() {
   const [rol, setRol] = useState("");
   return (
     <div className='container'>
       <div className='searchAgent-box'>
 
-        <div className='roles-box'>
+        <div className='roles-box animate__animated  animate__backInLeft'  >
           <button className='b-roles' onClick={() => { setRol("Duelist") }}>
             <img className='roles' src="https://media.valorant-api.com/agents/roles/4ee40330-ecdd-4f2f-98a8-eb1243428373/displayicon.png" alt="Duelista" />
           </button>
@@ -26,12 +26,12 @@ export default function Search() {
           </button>
         </div>
 
-        <form className='' action="">
+        <form className='animate__animated  animate__backInRight' action="">
           <input className='search-agent' type="text" placeholder="Search..." />
         </form>
       </div>
       <h1>{rol}</h1>
-      <Card rol={rol} />
+      <Card className="" rol={rol} />
     </div>
   )
 }

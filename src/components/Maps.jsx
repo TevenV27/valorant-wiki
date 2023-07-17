@@ -3,6 +3,7 @@ import { ClipLoader } from 'react-spinners';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal'
 import '../stylesheets/Maps.css';
+import 'animate.css';
 
 const Tarjet = ({ map }) => {
   const [open, setOpen] = React.useState(false);
@@ -55,7 +56,7 @@ export default function Maps({ type }) {
         setTimeout(() => {
           setMaps(data.data);
           setLoading(false);
-        }, 700);
+        }, 0);
       } catch (error) {
         console.log(error);
       }
@@ -66,12 +67,8 @@ export default function Maps({ type }) {
 
   return (
     <>
-      <div className="container-map">
-        {loading ? (
-          <div className="loader-container">
-            <ClipLoader color={'rgb(242,28,13)'} loading={loading} size={70} />
-          </div>
-        ) : (
+      <div className="container-map animate__animated animate__backInUp">
+        {
           maps.map((map) => {
             if (type === '') {
               return (
@@ -96,7 +93,7 @@ export default function Maps({ type }) {
             }
             return null;
           })
-        )}
+        }
       </div>
     </>
   );

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import '../stylesheets/Maps.css'
 import Maps from './Maps';
+import 'animate.css';
 
 export default function Search() {
     const [map, setMap] = useState("");
     return (
         <>
-            <div className='search-box'>
+            <div className='search-box '>
 
-                <div className='types-box'>
+                <div className='types-box animate__animated  animate__backInLeft'>
                     <button className='b-types' onClick={() => { setMap("Competitive") }}>
                         <p>COMPETITIVE</p>
                     </button>
@@ -20,7 +21,7 @@ export default function Search() {
                     </button>
                 </div>
 
-                <form className='' action="">
+                <form className='animate__animated  animate__backInRight' action="">
                     <input className='search-agent' type="text" placeholder="Search..." />
                 </form>
             </div>

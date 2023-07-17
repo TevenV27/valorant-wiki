@@ -58,13 +58,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     user-select: none;
-    background: #19232cf5;
+    background: #19232cfa;
     box-shadow: rgb(7, 7, 7) 0px 20px 30px -10px;
     border-radius: 15px;
-    padding: 40px;
+    padding: 40px 40px 40px 0px;
     
 }
 .fullimg-agent{
     width: 400px;
     height: auto;
+}
+.agent-info{
+    display: flex;
 }

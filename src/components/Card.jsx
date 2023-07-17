@@ -4,6 +4,7 @@ import { ClipLoader } from 'react-spinners';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal'
 import '../stylesheets/Card.css';
+import 'animate.css';
 
 const Tarjet = ({ agent }) => {
 
@@ -35,8 +36,14 @@ const Tarjet = ({ agent }) => {
       >
         <Box className='modalbox-agent'>
 
-          <div>
+          <div className='agent-info'>
             <img className='fullimg-agent' src={agent.fullPortrait} alt={agent.displayName} />
+            <div>
+              <span>Name: {agent.displayName}</span><br /><br />
+              {agent.role && <span>Role: {agent.role.displayName}<br /><br /></span>}
+              {agent.role && <span>Description role: {agent.role.description}<br /><br /></span>}
+              {agent.description && <span>Abilities: <br /></span>}
+            </div>
           </div>
 
 
@@ -68,7 +75,7 @@ const Card = ({ rol }) => {
         setTimeout(() => {
           setAgents(data.data);
           setLoading(false);
-        }, 700);
+        }, 500);
       } catch (error) {
         setError(error.message);
       }
@@ -83,12 +90,8 @@ const Card = ({ rol }) => {
 
   return (
     <>
-      <div className="container-card">
-        {loading ? (
-          <div className="loader-container">
-            <ClipLoader color={'rgb(242,28,13)'} loading={loading} size={70} />
-          </div>
-        ) : (
+      <div className="container-card animate__animated animate__backInUp">
+        {
           agents.map((agent) => {
             if (rol === '') {
               return (
@@ -107,7 +110,7 @@ const Card = ({ rol }) => {
             }
             return null;
           })
-        )}
+        }
       </div>
     </>
   );
