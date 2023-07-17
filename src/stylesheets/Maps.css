@@ -7,7 +7,9 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    height: 100vh;
     gap: 30px;
 }
 .card-map{
@@ -15,6 +17,7 @@
     background-color: #19232cf3;
     border-radius: 25px;
     overflow: hidden;
+    cursor: pointer;
 }
 h2{
     width: 100%;
@@ -22,3 +25,10 @@ h2{
     justify-content: center;
     
 }
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+
+  }
