@@ -19,7 +19,7 @@
 }
 
 .card:hover {
-    background-color: #171f26;
+    background-color: #ed2a3d;
     transform: translatey(-20px);
     -webkit-transform: translatey(-20px);
     -moz-transform: translatey(-20px);
@@ -52,16 +52,13 @@
 }
 
 .modalbox-agent {
-    border: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
     user-select: none;
-    background: #19232cfa;
+    background: #19232cfe;
     box-shadow: rgb(7, 7, 7) 0px 20px 30px -10px;
     border-radius: 15px;
     padding: 40px 40px 40px 0px;
+    max-width: 1000px;
     
 }
 .fullimg-agent{
@@ -70,4 +67,42 @@
 }
 .agent-info{
     display: flex;
+}
+
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px 0px 50px;
+}
+.ability-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    
+    
+}
+.ability-image{
+    width: 50px;
+    height: auto;
+    background-color: #0E121D;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.ability-image:hover{
+
+    background: #ed2a3d;
+}
+.ability-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    
+}
+h3{
+    color: #f03648;
 }

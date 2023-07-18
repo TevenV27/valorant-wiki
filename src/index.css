@@ -3,7 +3,7 @@
 }
 
 body {
-  overflow: scroll;
+  overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
   color: white;

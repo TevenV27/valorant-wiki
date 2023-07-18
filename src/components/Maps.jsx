@@ -22,18 +22,16 @@ const Tarjet = ({ map }) => {
         <img className='img-map' src={map.splash} alt={map.splash} />
         <h2>{map.displayName}</h2>
       </div>
-      <Modal
+      <Modal className='modal'
         open={open}
         onClose={handleClose}
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <Box className='box' sx={{ width: 400 }}>
-          <h2 id="parent-modal-title">Text in a modal</h2>
-          <p id="parent-modal-description">
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </p>
+        <Box className='box animate__animated animate__fadeInDownBig'>
           
+          <img className='map' src={map.displayIcon} alt={map.displayName} />
+          <h3 className='name-map'>{map.displayName}</h3>
         </Box>
       </Modal>
     </>
@@ -70,14 +68,14 @@ export default function Maps({ type }) {
       <div className="container-map animate__animated animate__backInUp">
         {
           maps.map((map) => {
-            if (type === '') {
+            if (type === '' && map.displayName !== "The Range") {
               return (
                 <React.Fragment key={map.uuid}>
                   {map.uuid && <Tarjet map={map} />}
                 </React.Fragment>
               );
             }
-            if (type === 'Competitive' && map.coordinates && map.coordinates !== null) {
+            if (type === 'Competitive' && map.coordinates && map.coordinates !== null && map.displayName !== "The Range") {
               return (
                 <React.Fragment key={map.uuid}>
                   {map.uuid && <Tarjet map={map} />}

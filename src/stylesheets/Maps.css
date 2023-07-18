@@ -43,7 +43,7 @@
     transform: translatey(-20px);
     -webkit-transform: translatey(-20px);
     -moz-transform: translatey(-20px);
-    background-color: #080d12;
+    background: #ed2a3d;
 }
 
 h2 {
@@ -96,15 +96,37 @@ h2 {
 h1 {
     padding: 0px;
 }
+.modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px 0px 50px;
+}
 
 .box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #19232cf3;
-    width: 400px;
-    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    background: #19232cfe;
+    box-shadow: rgb(7, 7, 7) 0px 20px 30px -10px;
     border-radius: 15px;
-    padding: 40px;
+    max-width: 600px;
+   
+}
+
+.map{
+    max-width: 600px;
+    
+    height: auto;
+}
+.name-map{
+    background: #ed2a3d;
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }

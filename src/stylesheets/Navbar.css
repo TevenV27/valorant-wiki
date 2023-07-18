@@ -1,6 +1,6 @@
 .nav-box{
     background-color: #0E121D;
-    padding: 5px 50px 5px 50px;
+    padding: 0px 50px 0px 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,13 +9,14 @@
 }
 .logo-img{
     width: auto;
-    height: 50px;
+    height: 40px;
     cursor: pointer;
 }
 
 .title{
     display: flex;
     justify-content: center;
+    font-size: 30px;
 }
 .navbar-list{
     display: flex;
@@ -43,5 +44,5 @@ a{
     border-radius: 15px;
 }
 .link:hover{
-    background: #181d2d;
+    background: #FD4556;
 }

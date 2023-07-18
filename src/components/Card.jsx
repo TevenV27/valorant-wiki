@@ -34,15 +34,30 @@ const Tarjet = ({ agent }) => {
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <Box className='modalbox-agent'>
+        <Box className='modalbox-agent  animate__animated animate__fadeInDownBig'>
 
-          <div className='agent-info'>
+          <div className='agent-info '>
             <img className='fullimg-agent' src={agent.fullPortrait} alt={agent.displayName} />
             <div>
-              <span>Name: {agent.displayName}</span><br /><br />
-              {agent.role && <span>Role: {agent.role.displayName}<br /><br /></span>}
-              {agent.role && <span>Description role: {agent.role.description}<br /><br /></span>}
-              {agent.description && <span>Abilities: <br /></span>}
+              <span><h3>Name:</h3> {agent.displayName}</span>
+              {agent.role && <span><h3>Role:</h3>{agent.role.displayName}</span>}
+              {agent.role && <span><h3>Description role:</h3>{agent.role.description}</span>}
+              {<span><h3>Abilities:</h3></span>}
+              <div className='ability-container'>
+                {agent.abilities.map((ability) => {
+                  return (
+                    <React.Fragment key={ability.uuid}>
+                      <div className='ability-box'>
+                        <img className='ability-image' src={ability.displayIcon} alt={ability.displayName} />
+                        {ability.displayName}
+                      </div>
+
+                    </React.Fragment>
+                  );
+                })}
+              </div>
+
+              <strong></strong>
             </div>
           </div>
 
@@ -75,7 +90,7 @@ const Card = ({ rol }) => {
         setTimeout(() => {
           setAgents(data.data);
           setLoading(false);
-        }, 500);
+        }, 0);
       } catch (error) {
         setError(error.message);
       }
@@ -93,7 +108,7 @@ const Card = ({ rol }) => {
       <div className="container-card animate__animated animate__backInUp">
         {
           agents.map((agent) => {
-            if (rol === '') {
+            if (agent && agent.role && rol === "") {
               return (
                 <React.Fragment key={agent.uuid}>
                   {agent.uuid && <Tarjet agent={agent} />}
