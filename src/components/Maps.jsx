@@ -19,7 +19,7 @@ const Tarjet = ({ map }) => {
     <>
       <div onClick={handleOpen} className="card-map">
         <img className='img-map' src={map.splash} alt={map.splash} />
-        <h2>{map.displayName}</h2>
+        <h2 className='name-maps'>{map.displayName}</h2>
       </div>
       <Modal className='modal'
         open={open}
