@@ -1,7 +1,8 @@
 import React from 'react'
 import '../stylesheets/Navbar.css'
 import { Link } from 'react-router-dom';
-//navbar
+
+
 export default function navbar() {
 
   return (
@@ -10,10 +11,10 @@ export default function navbar() {
       <h1 className="title">VALORANT WIKI</h1>
       <nav>
         <ul className="navbar-list">
-          <li><Link className='link' to="/">Agents</Link></li>
-          <li><Link className='link' to="/maps">Maps</Link></li>
-          <li><Link className='link' to="/weapons">Weapons</Link></li>
-          <li><Link className='link' to="/stats">Stats</Link></li>
+          <li><Link className='link' to="/">AGENTES</Link></li>
+          <li><Link className='link' to="/Mapas">MAPAS</Link></li>
+          <li><Link className='link' to="/Armas">ARMAS</Link></li>
+          <li><Link className='link' to="/Estadisticas">ESTADISTICAS</Link></li>
         </ul>
       </nav>
     </div>

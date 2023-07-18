@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { ClipLoader } from 'react-spinners';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal'
 import '../stylesheets/Maps.css';
-import 'animate.css';
+
 
 const Tarjet = ({ map }) => {
   const [open, setOpen] = React.useState(false);

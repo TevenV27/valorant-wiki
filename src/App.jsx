@@ -3,9 +3,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SearchAgent from './components/SearchAgent';
 import SearchMap from './components/SearchMap';
-import Maps from './components/Maps';
 import Weapons from './components/Weapons';
 import Stats from './components/Stats';
+import 'animate.css';
+
 
 function App() {
   return (
@@ -13,9 +14,9 @@ function App() {
       <Navbar />
         <Routes>
           <Route path="/" element={<SearchAgent />} />
-          <Route path="/maps" element={<SearchMap />} />
-          <Route path="/weapons" element={<Weapons />} />
-          <Route path="/stats" element={<Stats />} />
+          <Route path="/Mapas" element={<SearchMap />} />
+          <Route path="/Armas" element={<Weapons />} />
+          <Route path="/Estadisticas" element={<Stats />} />
         </Routes>
 
 

@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Search from './SearchAgent';
-import { ClipLoader } from 'react-spinners';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal'
 import '../stylesheets/Card.css';
-import 'animate.css';
+
 
 const Tarjet = ({ agent }) => {
 
@@ -25,7 +23,7 @@ const Tarjet = ({ agent }) => {
           {agent.role && <img className='rol-agent' src={agent.role.displayIcon} alt="Rol" />}
         </div>
         <div className='description-box'>
-          <p>History:</p>
+          <p>Descripcion:</p>
           <p>{agent.description}</p>
         </div>
       </div>
@@ -40,10 +38,10 @@ const Tarjet = ({ agent }) => {
           <div className='agent-info '>
             <img className='fullimg-agent' src={agent.fullPortrait} alt={agent.displayName} />
             <div>
-              <span><h3>Name:</h3> {agent.displayName}</span>
-              {agent.role && <span><h3>Role:</h3>{agent.role.displayName}</span>}
-              {agent.role && <span><h3>Description role:</h3>{agent.role.description}</span>}
-              {<span><h3>Abilities:</h3></span>}
+              <span><h3>Nombre:</h3> {agent.displayName}</span>
+              {agent.role && <span><h3>Rol:</h3>{agent.role.displayName}</span>}
+              {agent.role && <span><h3>Descripcion del rol:</h3>{agent.role.description}</span>}
+              {<span><h3>Habilidades:</h3></span>}
               <div className='ability-container'>
                 {agent.abilities.map((ability) => {
                   return (
@@ -52,7 +50,6 @@ const Tarjet = ({ agent }) => {
                         <img className='ability-image' src={ability.displayIcon} alt={ability.displayName} />
                         {ability.displayName}
                       </div>
-
                     </React.Fragment>
                   );
                 })}
@@ -71,13 +68,12 @@ const Tarjet = ({ agent }) => {
 
 const Card = ({ rol }) => {
   const [agents, setAgents] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://valorant-api.com/v1/agents', {
+        const response = await fetch('https://valorant-api.com/v1/agents?language=es-MX', {
           headers: {
             'Accept-Language': 'es-ES'
           }
@@ -90,7 +86,6 @@ const Card = ({ rol }) => {
         const data = await response.json();
         setTimeout(() => {
           setAgents(data.data);
-          setLoading(false);
         }, 0);
       } catch (error) {
         setError(error.message);

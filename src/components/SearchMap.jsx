@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../stylesheets/Maps.css'
 import Maps from './Maps';
-import 'animate.css';
+
 
 export default function Search() {
     const [map, setMap] = useState("");
@@ -11,13 +11,13 @@ export default function Search() {
 
                 <div className='types-box animate__animated  animate__backInLeft'>
                     <button className='b-types' onClick={() => { setMap("Competitive") }}>
-                        <p>COMPETITIVE</p>
+                        <p>COMPETITIVO</p>
                     </button>
                     <button className='b-types' onClick={() => { setMap("Deathmatch") }}>
-                        <p>DEATHMATCH DEFINITIVE</p>
+                        <p>DEATHMATCH DEFINITIVO</p>
                     </button>
                     <button className='b-types' onClick={() => { setMap("") }}>
-                        <p>ALL</p>
+                        <p>TODOS</p>
                     </button>
                 </div>
 
