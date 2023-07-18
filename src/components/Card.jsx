@@ -25,6 +25,7 @@ const Tarjet = ({ agent }) => {
           {agent.role && <img className='rol-agent' src={agent.role.displayIcon} alt="Rol" />}
         </div>
         <div className='description-box'>
+          <p>History:</p>
           <p>{agent.description}</p>
         </div>
       </div>
