@@ -13,7 +13,7 @@ body {
   background: #141D26;
 }
 body::-webkit-scrollbar {
-  width: 8px;
+  width: 0px;
 }
 
 body::-webkit-scrollbar-track{
@@ -22,4 +22,14 @@ body::-webkit-scrollbar-track{
 
 body::-webkit-scrollbar-thumb{
   background-color: transparent;
+}
+
+.Owner{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0E121D;
+  padding: 10px;
+  color: #b5b5b5;
 }

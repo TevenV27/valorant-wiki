@@ -18,8 +18,6 @@ function App() {
           <Route path="/Armas" element={<Weapons />} />
           <Route path="/Estadisticas" element={<Stats />} />
         </Routes>
-
-
     </BrowserRouter>
   );
 }
