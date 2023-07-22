@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Hack Nerd Font';
+    src: url('../fonts/HackNerdFont-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .container-weapon {
     display: flex;
     flex-wrap: wrap;
@@ -25,9 +32,11 @@
 
 .card-weapon:hover {
     background-color: #ed2a3d;
-    transform: translatey(-20px);
+    /* transform: translatey(-20px); */
     -webkit-transform: translatey(-20px);
     -moz-transform: translatey(-20px);
+    transform: scale(1.2) translatey(-10px);
+    width: 430px;
 
     .name-weapon {
         background-color: #dedede;
@@ -35,7 +44,11 @@
     }
 
     .img-weapon {
-        transform: rotateY(180deg);
+        height: 65px;
+        transform: rotateY(180deg) scale(1.2);
+
+
+
     }
 }
 
@@ -62,6 +75,7 @@
 
 .modal {
     border: none;
+
 }
 
 .modalbox-skins {
@@ -142,5 +156,38 @@
 
 .box-skin-name {
     width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+}
+
+.video-skin {
+    width: 1000px;
+    height: auto;
+}
+
+.modalbox-skin-video {
+    border: none;
+    user-select: none;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.modal-video {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-watch{
+    font-family: 'Hack Nerd Font';
+    font-size: 1.5rem;
+
+}
+.icon-watch:hover{
+    color: rgb(255, 196, 0)
 }

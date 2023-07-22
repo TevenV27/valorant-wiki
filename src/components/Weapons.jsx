@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal'
+import Modal from '@mui/material/Modal';
 import '../stylesheets/Weapons.css';
 
 const Tarjet = ({ weapon }) => {
-
   const [open, setOpen] = React.useState(false);
+  const [openVideo, setOpenVideo] = React.useState(false);
+  const [videoUrl, setVideoUrl] = useState('');
+
   const handleOpen = () => {
     setOpen(true);
   };
@@ -14,24 +16,39 @@ const Tarjet = ({ weapon }) => {
     setOpen(false);
   };
 
+  const handleOpenVideo = (url) => {
+    setVideoUrl(url);
+    setOpenVideo(true);
+  };
+
+  const handleCloseVideo = () => {
+    setVideoUrl('');
+    setOpenVideo(false);
+  };
+
   return (
     <>
       <div onClick={handleOpen} className="card-weapon">
         <img className='img-weapon' src={weapon.displayIcon} alt={weapon.displayName} />
         <strong className='name-weapon'>{weapon.displayName}</strong>
       </div>
-      <Modal className='modal ' open={open} onClose={handleClose}>
-        <Box className='modalbox-skins  animate__animated animate__fadeInDownBig'>
+      <Modal className='modal'
+        open={open}
+        onClose={handleClose}
+      >
+        <Box className='modalbox-skins animate__animated animate__fadeInDownBig'>
           <h3 className='skin-title' >Skins disponibles para {weapon.displayName}</h3>
           <div className='skin-container'>
             {weapon.skins && weapon.skins.map((skin) => {
               if (skin.displayIcon !== null && skin.contentTierUuid !== null) {
+                const hasStreamedVideo = skin.levels && skin.levels[skin.levels.length - 1]?.streamedVideo;
                 return (
                   <React.Fragment key={skin.uuid}>
                     <div className='skin-box'>
                       <img className='img-skin' src={skin.displayIcon} alt="" />
                       <div className='box-skin-name'>
                         <span>{skin.displayName}</span>
+                        {hasStreamedVideo ? <span className='icon-watch' onClick={() => handleOpenVideo(skin.levels[skin.levels.length - 1].streamedVideo)}></span> : null}
                       </div>
                     </div>
                   </React.Fragment>
@@ -40,6 +57,16 @@ const Tarjet = ({ weapon }) => {
               return null; // Omitir renderizado si displayIcon es null
             })}
           </div>
+        </Box>
+      </Modal>
+      <Modal className='modal-video'
+        open={openVideo}
+        onClose={handleCloseVideo}
+      // Personaliza el contenido del modal para ajustar el ancho del video
+
+      >
+        <Box className="modalbox-skin-video">
+          <video className='video-skin' src={videoUrl} controls></video>
         </Box>
       </Modal>
     </>
