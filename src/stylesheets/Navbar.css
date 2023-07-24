@@ -39,13 +39,18 @@ a{
 
 .link{
     user-select: none;
-    padding: 10px 5px 10px 5px;
+    padding: 10px 0px 5px 0px;
     width: 150px;
     display: flex;
     justify-content: center;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 3px;
+   
 }
 .link:hover{
-    background: #FD4556;
+    border-bottom: #FD4556 3px solid;
+}
+.active{
+    
+    border-bottom: #FD4556 3px solid;
 }

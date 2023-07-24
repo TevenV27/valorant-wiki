@@ -17,9 +17,9 @@ const Tarjet = ({ map , colors}) => {
 
   return (
     <>
-      <div onClick={handleOpen} className="card-map" style={{background: colors.card}}>
+      <div onClick={handleOpen} className="card-map" style={{background: colors.nameMapBox}}>
         <img className='img-map' src={map.splash} alt={map.splash} />
-        <h2 className='name-maps' style={{background: colors.background, color: colors.text}}>{map.displayName}</h2>
+        <h2 className='name-maps' style={{ }}>{map.displayName}</h2>
       </div>
       <Modal className='modal'
         open={open}

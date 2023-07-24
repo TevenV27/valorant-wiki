@@ -23,9 +23,9 @@
 
 .card:hover {
     background-color: #ed2a3d;
-    transform: translatey(-20px);
-    -webkit-transform: translatey(-20px);
-    -moz-transform: translatey(-20px);
+    transform: translatey(-40px);
+    -webkit-transform: translatey(-40px);
+    -moz-transform: translatey(-0px);
 
 }
 
@@ -61,6 +61,10 @@
     padding-bottom: 20px;
     height: auto;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px -60px 36px -28px inset, rgba(0, 0, 0, 0.3) 0px 60px 36px -28px inset;
+
+    
+
 }
 .agent-info{
     display: flex;

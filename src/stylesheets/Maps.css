@@ -29,7 +29,6 @@
 
 .card-map {
     width: 400px;
-    background-color: #19232cf3;
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
@@ -45,11 +44,6 @@
     -webkit-transform: translatey(-20px);
     -moz-transform: translatey(-20px);
 
-    .name-maps {
-
-        background: #ed2a3d;
-        color: white;
-    }
 
     .img-map {
         transform: scale(1.1);
@@ -80,7 +74,7 @@ h2 {
 }
 
 .b-types {
-    height: 58px;
+    height: 56px;
     color: white;
     font-size: 1.4rem;
     font-family: monospace;
@@ -88,7 +82,7 @@ h2 {
     background: none;
     border: none;
     background-color: #19232cf3;
-    border-radius: 10px;
+    border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     cursor: pointer;
    
@@ -96,7 +90,7 @@ h2 {
 }
 
 .b-types:hover {
-    background-color: #080d12;
+    box-shadow: inset 0px -3px 0 0px #ed2a3d;
 
 }
 
@@ -143,14 +137,19 @@ h1 {
     align-items: center;
     justify-content: center;
     color: white;
+    padding-left: 20px;
 }
 
 .name-maps {
-    background-color: #273139;
+   
+    border-top: #ed2a3d 1px solid;
+    border-bottom: #ed2a3d 1px solid;
     width: 100%;
     padding: 5px;
     display: flex;
-    align-items: center;
+    align-items: center;     
     justify-content: center;
-    color: white;
+}
+.active-map{
+    box-shadow: inset 0px -3px 0 0px #ed2a3d;
 }
