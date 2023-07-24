@@ -3,11 +3,12 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import '../stylesheets/Weapons.css';
 
-const Tarjet = ({ weapon }) => {
+const Tarjet = ({ weapon, colors }) => {
   const [open, setOpen] = React.useState(false);
   const [openVideo, setOpenVideo] = React.useState(false);
   const [videoUrl, setVideoUrl] = useState('');
-
+  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered2, setIsHovered2] = useState(false);
   const handleOpen = () => {
     setOpen(true);
   };
@@ -28,7 +29,7 @@ const Tarjet = ({ weapon }) => {
 
   return (
     <>
-      <div onClick={handleOpen} className="card-weapon">
+      <div onClick={handleOpen} className="card-weapon" style={{ background: isHovered ? colors.hoverCard : colors.card }} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
         <img className='img-weapon' src={weapon.displayIcon} alt={weapon.displayName} />
         <strong className='name-weapon'>{weapon.displayName}</strong>
       </div>
@@ -36,7 +37,7 @@ const Tarjet = ({ weapon }) => {
         open={open}
         onClose={handleClose}
       >
-        <Box className='modalbox-skins animate__animated animate__fadeInDownBig'>
+        <Box className='modalbox-skins animate__animated animate__fadeInDownBig' style={{ background: colors.background }}>
           <h3 className='skin-title' >Skins disponibles para {weapon.displayName}</h3>
           <div className='skin-container'>
             {weapon.skins && weapon.skins.map((skin) => {
@@ -44,10 +45,10 @@ const Tarjet = ({ weapon }) => {
                 const hasStreamedVideo = skin.levels && skin.levels[skin.levels.length - 1]?.streamedVideo;
                 return (
                   <React.Fragment key={skin.uuid}>
-                    <div className='skin-box'>
+                    <div className='skin-box' style={{ background: isHovered ? colors.hoverCard : colors.card }} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                       <img className='img-skin' src={skin.displayIcon} alt="" />
                       <div className='box-skin-name'>
-                        <span>{skin.displayName}</span>
+                        <span><strong>{skin.displayName}</strong></span>
                         {hasStreamedVideo ? <span className='icon-watch' onClick={() => handleOpenVideo(skin.levels[skin.levels.length - 1].streamedVideo)}></span> : null}
                       </div>
                     </div>
@@ -65,6 +66,7 @@ const Tarjet = ({ weapon }) => {
       // Personaliza el contenido del modal para ajustar el ancho del video
 
       >
+        
         <Box className="modalbox-skin-video">
           <video className='video-skin' src={videoUrl} controls></video>
         </Box>
@@ -73,7 +75,7 @@ const Tarjet = ({ weapon }) => {
   );
 };
 
-const Weapons = ({ rol }) => {
+const Weapons = ({ rol, colors }) => {
   const [weapons, setWeapons] = useState([]);
   const [error, setError] = useState(null);
 
@@ -112,7 +114,7 @@ const Weapons = ({ rol }) => {
       <div className='container-weapon animate__animated animate__backInUp'>
         {weapons.map((weapon) => (
           <React.Fragment key={weapon.uuid}>
-            {weapon.uuid && <Tarjet weapon={weapon} />}
+            {weapon.uuid && <Tarjet weapon={weapon} colors={colors} />}
           </React.Fragment>
         ))}
       </div>

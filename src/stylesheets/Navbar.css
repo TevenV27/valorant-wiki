@@ -1,10 +1,12 @@
 .nav-box{
-    background-color: #0E121D;
-    padding: 0px 50px 0px 50px;
+    padding: 0px 40px 0px 40px;
+    height: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    font-family:'Hack Nerd Font' ;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
 }
 .logo-img{
@@ -16,7 +18,8 @@
 .title{
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-size: px;
+    padding: 0px;
 }
 .navbar-list{
     display: flex;
@@ -36,7 +39,7 @@ a{
 
 .link{
     user-select: none;
-    padding: 20px 15px 20px 25px;
+    padding: 10px 5px 10px 5px;
     width: 150px;
     display: flex;
     justify-content: center;

@@ -1,8 +1,17 @@
+@font-face {
+  font-family: 'Hack Nerd Font';
+  src: url('../fonts/HackNerdFont-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
 }
 
+
 body {
+  font-family:'Hack Nerd Font' ;
   overflow-y: scroll;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;

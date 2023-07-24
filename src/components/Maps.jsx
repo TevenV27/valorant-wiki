@@ -4,7 +4,7 @@ import Modal from '@mui/material/Modal'
 import '../stylesheets/Maps.css';
 
 
-const Tarjet = ({ map }) => {
+const Tarjet = ({ map , colors}) => {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -17,9 +17,9 @@ const Tarjet = ({ map }) => {
 
   return (
     <>
-      <div onClick={handleOpen} className="card-map">
+      <div onClick={handleOpen} className="card-map" style={{background: colors.card}}>
         <img className='img-map' src={map.splash} alt={map.splash} />
-        <h2 className='name-maps'>{map.displayName}</h2>
+        <h2 className='name-maps' style={{background: colors.background, color: colors.text}}>{map.displayName}</h2>
       </div>
       <Modal className='modal'
         open={open}
@@ -37,7 +37,7 @@ const Tarjet = ({ map }) => {
   );
 };
 
-export default function Maps({ type }) {
+export default function Maps({ type, colors }) {
   const [maps, setMaps] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -70,21 +70,21 @@ export default function Maps({ type }) {
             if (type === '' && map.displayName !== "The Range") {
               return (
                 <React.Fragment key={map.uuid}>
-                  {map.uuid && <Tarjet map={map} />}
+                  {map.uuid && <Tarjet map={map} colors={colors} />}
                 </React.Fragment>
               );
             }
             if (type === 'Competitive' && map.coordinates && map.coordinates !== null && map.displayName !== "The Range") {
               return (
                 <React.Fragment key={map.uuid}>
-                  {map.uuid && <Tarjet map={map} />}
+                  {map.uuid && <Tarjet map={map} colors={colors}/>}
                 </React.Fragment>
               );
             }
             if (type === 'Deathmatch' && (!map.coordinates || map.coordinates === null)) {
               return (
                 <React.Fragment key={map.uuid}>
-                  {map.uuid && <Tarjet map={map} />}
+                  {map.uuid && <Tarjet map={map} colors={colors}/>}
                 </React.Fragment>
               );
             }

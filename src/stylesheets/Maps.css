@@ -30,10 +30,10 @@
 .card-map {
     width: 400px;
     background-color: #19232cf3;
-    border-radius: 25px;
+    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     transition: .5s, color .10s;
     -webkit-transition: .5s, color .10s;
     -moz-transition: .5s, color .10s;
@@ -80,6 +80,7 @@ h2 {
 }
 
 .b-types {
+    height: 58px;
     color: white;
     font-size: 1.4rem;
     font-family: monospace;
@@ -90,6 +91,7 @@ h2 {
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     cursor: pointer;
+   
 
 }
 

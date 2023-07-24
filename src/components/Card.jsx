@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import '../stylesheets/Card.css';
 
-const Tarjet = ({ agent }) => {
+const Tarjet = ({ agent, colors }) => {
   const [open, setOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -16,51 +18,53 @@ const Tarjet = ({ agent }) => {
 
   return (
     <>
-      <div onClick={handleOpen} className="card">
-        <img src={agent.displayIcon} alt={agent.displayName} />
-        <div className='info-agent'>
-          <h2 className='name-agent'>{agent.displayName}</h2>
-          {agent.role && <img className='rol-agent' src={agent.role.displayIcon} alt="Rol" />}
+      <div key={agent.uuid}>
+        <div onClick={handleOpen} className="card" style={{ background: isHovered ? colors.hoverCard : colors.card, color: colors.text }} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+          <img src={agent.displayIcon} alt={agent.displayName} />
+          <div className='info-agent' style={{ background: colors.nameAgentBox, color: colors.nameAgentText }}>
+            <h2 className='name-agent'>{agent.displayName}</h2>
+            {agent.role && <img className='rol-agent' src={agent.role.displayIcon} alt="Rol" />}
+          </div>
+          <div className='description-box'>
+            <p>Descripción:</p>
+            <p >{agent.description}</p>
+          </div>
         </div>
-        <div className='description-box'>
-          <p>Descripcion:</p>
-          <p>{agent.description}</p>
-        </div>
-      </div>
-      <React.Fragment key={agent.uuid}>
-        <Modal className='modal'
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="parent-modal-title"
-          aria-describedby="parent-modal-description"
-        >
-          <Box className='modalbox-agent  animate__animated animate__fadeInDownBig'>
-            <div className='agent-info '>
-              <img className='fullimg-agent' src={agent.fullPortrait} alt={agent.displayName} />
-              <div>
-                <span><h3>Nombre:</h3> {agent.displayName}</span>
-                {agent.role && <span><h3>Rol:</h3>{agent.role.displayName}</span>}
-                {agent.role && <span><h3>Descripcion del rol:</h3>{agent.role.description}</span>}
-                {<span><h3>Habilidades:</h3></span>}
-                <div className='ability-container'>
-                  {agent.abilities.map((ability) => (
-                    <div className='ability-box' key={ability.uuid}>
-                      <img className='ability-image' src={ability.displayIcon} alt={ability.displayName} />
-                      {ability.displayName}
-                    </div>
-                  ))}
+        <React.Fragment key={agent.uuid}>
+          <Modal className='modal'
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="parent-modal-title"
+            aria-describedby="parent-modal-description"
+          >
+            <Box className='modalbox-agent  animate__animated animate__fadeInDownBig' style={{ background: colors.background }}>
+              <div className='agent-info '>
+                <img className='fullimg-agent' src={agent.fullPortrait} alt={agent.displayName} style={{ background: colors.card }} />
+                <div style={{ color: colors.text, padding: '10px 50px 30px 30px' }}>
+                  <span><h3>Nombre:</h3> {agent.displayName}</span>
+                  {agent.role && <span><h3>Rol:</h3>{agent.role.displayName}</span>}
+                  {agent.role && <span><h3>Descripcion del rol:</h3>{agent.role.description}</span>}
+                  {<span><h3>Habilidades:</h3></span>}
+                  <div className='ability-container'>
+                    {agent.abilities.map((ability) => (
+                      <div className='ability-box' key={ability.uuid}>
+                        <img className='ability-image' src={ability.displayIcon} alt={ability.displayName} />
+                        {ability.displayName}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <strong></strong>
               </div>
-            </div>
-          </Box>
-        </Modal>
-      </React.Fragment>
+            </Box>
+          </Modal>
+        </React.Fragment>
+      </div>
+
     </>
   );
 };
 
-const Card = ({ rol }) => {
+const Card = ({ rol, colors }) => {
   const [agents, setAgents] = useState([]);
   const [error, setError] = useState(null);
 
@@ -97,7 +101,7 @@ const Card = ({ rol }) => {
         {agents.map((agent) => {
           if (agent && agent.role && (rol === "" || agent.role.displayName === rol)) {
             return (
-              <Tarjet key={agent.uuid} agent={agent} />
+              <Tarjet key={agent.uuid} agent={agent} colors={colors} />
             );
           }
           return null;
