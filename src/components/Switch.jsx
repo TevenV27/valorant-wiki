@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../stylesheets/Switch.css';
 
 const Switch = ({ toggleMode }) => {
-    const [isChecked, setIsChecked] = useState(true);
+    const [isChecked, setIsChecked] = useState(false);
 
     const handleToggle = () => {
         setIsChecked(!isChecked);

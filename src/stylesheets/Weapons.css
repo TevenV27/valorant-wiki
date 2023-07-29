@@ -95,6 +95,9 @@
     max-width: 70%;
     max-height: 70%;
 }
+.modalbox-skins:focus{
+    outline: none;
+}
 
 .modalbox-skins::-webkit-scrollbar {
     width: 0px;

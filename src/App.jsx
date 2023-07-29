@@ -12,7 +12,7 @@ import { darkTheme, lightTheme } from '../colors';
 import 'animate.css';
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   const toggleMode = () => {
     // Cambiar 'theme' en lugar de 'mode' en la siguiente línea
@@ -27,6 +27,7 @@ function App() {
         backgroundColor: colors.background,
         width: '100%',
         height: '100%',
+        overflow: 'hidden',
       }}>
         <Navbar toggleMode={toggleMode} colors={colors} />
         <Routes>
