@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../stylesheets/Navbar.css';
 import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar({ colors }) {
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div className="nav-box" style={{ background: colors.navbar, color: colors.text }}>
@@ -14,47 +18,57 @@ export default function Navbar({ colors }) {
       />
       <h1 className="title">VALORANT WIKI</h1>
       <nav className='menu'>
-        <p className='menu-slide'>󰍜</p>
-        <ul className="navbar-list">
 
-          <li>
-            <Link
-              className={`link ${location.pathname === '/' ? 'active' : ''}`}
-              to="/"
-              style={{ color: colors.text }}
-            >
-              AGENTES
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={`link ${location.pathname === '/Mapas' ? 'active' : ''}`}
-              to="/Mapas"
-              style={{ color: colors.text }}
-            >
-              MAPAS
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={`link ${location.pathname === '/Armas' ? 'active' : ''}`}
-              to="/Armas"
-              style={{ color: colors.text }}
-            >
-              ARMAS
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={`link ${location.pathname === '/Estadisticas' ? 'active' : ''}`}
-              to="/Estadisticas"
-              style={{ color: colors.text }}
-            >
-              ESTADISTICAS
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+        {/* Icono menu para el modo mobile */}
+        <p className='menu-slide' onClick={handleMenuClick}>󰍜</p>
+
+        {/* Menu de navegacion */}
+        <ul className={`navbar-list ${isMenuOpen ? 'show animate__animated animate__fadeInRight' : 'animate__animated animate__fadeInLeft'}`}
+          style={{ background: colors.navbar }}
+        >
+        <li>
+          <Link
+            className={`link ${location.pathname === '/' ? 'active' : ''}`}
+            to="/"
+            style={{ color: colors.text }}
+            onClick={() => setIsMenuOpen(false)}
+
+          >
+            AGENTES
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={`link ${location.pathname === '/Mapas' ? 'active' : ''}`}
+            to="/Mapas"
+            style={{ color: colors.text }}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            MAPAS
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={`link ${location.pathname === '/Armas' ? 'active' : ''}`}
+            to="/Armas"
+            style={{ color: colors.text }}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            ARMAS
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={`link ${location.pathname === '/Estadisticas' ? 'active' : ''}`}
+            to="/Estadisticas"
+            style={{ color: colors.text }}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            ESTADISTICAS
+          </Link>
+        </li>
+      </ul>
+    </nav>
+    </div >
   );
 }

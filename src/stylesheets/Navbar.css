@@ -3,54 +3,61 @@
     src: url('../fonts/HackNerdFont-Regular.ttf');
     font-weight: normal;
     font-style: normal;
-  }
-  .menu-slide{
+}
+
+.menu-slide {
     font-size: 3rem;
     display: none;
     cursor: pointer;
     user-select: none;
-  }
-  .menu-slide:hover{
+}
+
+.menu-slide:hover {
     color: #ed2a3d;
-  }
-  .menu{
+}
+
+.menu {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-.nav-box{
+}
+
+.nav-box {
     padding: 0px 40px 0px 40px;
     height: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    font-family:'Hack Nerd Font' ;
+    font-family: 'Hack Nerd Font';
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
 }
-.logo-img{
+
+.logo-img {
     width: auto;
     height: 40px;
     cursor: pointer;
 }
 
-.title{
+.title {
     display: flex;
     justify-content: center;
     font-size: px;
     padding: 0px;
 }
-.navbar-list{
+
+.navbar-list {
     display: flex;
     flex-direction: row;
     gap: 10px;
     list-style: none;
     justify-content: center;
     align-items: center;
-   
+
 }
-a{
+
+a {
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
@@ -59,7 +66,7 @@ a{
 }
 
 
-.link{
+.link {
     user-select: none;
     padding: 10px 0px 5px 0px;
     width: 150px;
@@ -67,29 +74,59 @@ a{
     justify-content: center;
     cursor: pointer;
     border-radius: 3px;
-   
+
 }
-.link:hover{
-    border-bottom: #FD4556 3px solid;
+
+.link:hover {
+    box-shadow: inset 0px -2px 0 0px #ed2a3d;
 }
-.active{
-    
-    border-bottom: #FD4556 3px solid;
+
+.active {
+
+    box-shadow: inset 0px -2px 0 0px #ed2a3d;
 }
-@media (max-width: 991.98px) { 
-    .nav-box{
+
+@media (max-width: 991.98px) {
+    .nav-box {
         padding: 0px 20px 0px 20px;
     }
-    .logo-img{
+
+    .logo-img {
         width: 50px;
     }
-    .menu-slide{
+
+    .menu-slide {
         display: flex;
     }
-    .navbar-list{
+
+    .navbar-list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 70px;
         display: none;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 6px 8px;
     }
-    .title{
+
+    .navbar-list.show {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        background-color: #080d12cb;
+        z-index: 1;
+
+        
+
+    }
+    .link{
+        color: white;
+    }
+
+    .title {
         font-size: 1.2rem;
     }
-  }
+}
