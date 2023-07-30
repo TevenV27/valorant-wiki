@@ -13,8 +13,10 @@ export default function Navbar({ colors }) {
         alt=""
       />
       <h1 className="title">VALORANT WIKI</h1>
-      <nav>
+      <nav className='menu'>
+        <p className='menu-slide'>󰍜</p>
         <ul className="navbar-list">
+
           <li>
             <Link
               className={`link ${location.pathname === '/' ? 'active' : ''}`}

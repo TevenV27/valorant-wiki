@@ -132,7 +132,7 @@ h3 {
 
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 550px) {
     .card-container{
         width: 100%;
         display: flex;
