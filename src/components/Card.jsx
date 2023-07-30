@@ -18,7 +18,7 @@ const Tarjet = ({ agent, colors }) => {
 
   return (
     <>
-      <div key={agent.uuid}>
+      <div className='card-container' key={agent.uuid}>
         <div onClick={handleOpen} className="card" style={{ background: isHovered ? colors.hoverCard : colors.card, color: colors.text }} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
           <img className='image-agent' src={agent.displayIcon} alt={agent.displayName} />
           <div className='info-agent' style={{ background: colors.nameAgentBox, color: colors.nameAgentText }}>
