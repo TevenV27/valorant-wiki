@@ -10,6 +10,7 @@
     display: none;
     cursor: pointer;
     user-select: none;
+
 }
 
 .menu-slide:hover {
@@ -97,6 +98,7 @@ a {
 
     .menu-slide {
         display: flex;
+        user-select: none;
     }
 
     .navbar-list {

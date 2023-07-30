@@ -46,6 +46,7 @@ input::placeholder {
     color: white;
   }
 .b-roles{
+    user-select: none;
     display: flex;
     justify-content: center;
     align-items: center;
