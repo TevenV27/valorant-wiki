@@ -77,11 +77,18 @@ input::placeholder {
 
 @media (max-width: 991.98px) { 
    .b-roles{
-    width: 70px;
-    height: 50px;
+    width: 60px;
+    height: 40px;
    }
    .searchAgent-box{
     flex-direction: column;
     gap: 20px;
+   }
+   .roles{
+    padding: 10px;
+    width: 45px;
+   }
+   span{
+    font-size: 1.2rem;
    }
  }
