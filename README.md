@@ -1,5 +1,6 @@
 # VALORANT INFO APP
-[DEMO](https://www.openai.com/](https://valorantgg-wiki.vercel.app/)
+[DEMO](https://valorantgg-wiki.vercel.app/)
+
 # HOW TO USE
 
 ```
