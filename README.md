@@ -1,5 +1,6 @@
 # VALORANT INFO APP
-[DEMO](https://valorantgg-wiki.vercel.app/)
+[DEMO]()
+<a href="https://valorantgg-wiki.vercel.app/" target="_blank">DEMO</a>
 
 # HOW TO USE
 
