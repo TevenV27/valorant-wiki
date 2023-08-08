@@ -9,5 +9,4 @@ $ git clone https://github.com/TevenV27/valorant-wiki.git)https://github.com/Tev
 $ npm install
 # Start project
 $ npm run dev
-
 ```
