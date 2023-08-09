@@ -74,17 +74,15 @@ h2 {
 }
 
 .b-types {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     user-select: none;
     height: 56px;
     color: white;
-    font-size: 1.4rem;
-    font-family: monospace;
     padding: 0px 20px 0px 20px;
-    background: none;
     border: none;
-    background-color: #19232cf3;
     border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     cursor: pointer;
    
 
@@ -105,10 +103,7 @@ h1 {
 }
 
 .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 50px 0px 50px;
+
 }
 
 .box {
@@ -157,3 +152,21 @@ h1 {
 .active-map{
     box-shadow: inset 0px -3px 0 0px #ed2a3d;
 }
+@media (max-width: 820px) { 
+    .b-types{
+     width: auto;
+     height: 40px;
+    }
+    .search-box{
+     flex-direction: column;
+ 
+     gap: 20px;
+    }
+    .roles{
+     padding: 10px;
+     width: 45px;
+    }
+    span{
+     font-size: 1rem;
+    }
+  }

@@ -21,7 +21,7 @@ export default function Search({ colors }) {
             style={{ background: colors.button, position: 'relative', overflow: 'hidden' }}
             onClick={() => setMap('Deathmatch')}
           >
-            <span>DEATHMATCH DEFINITIVO</span>
+            <span>DM DEFINITIVO</span>
           </button>
           <button
             className={`b-types ${map === '' ? 'active-map' : ''}`}

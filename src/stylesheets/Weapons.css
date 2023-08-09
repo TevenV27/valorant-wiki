@@ -6,6 +6,7 @@
 }
 
 .container-weapon {
+    padding-top: 30px;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -74,8 +75,8 @@
 }
 
 .modal {
-    border: none;
-
+   padding: 0;
+   margin: 0;
 }
 
 .modalbox-skins {
@@ -84,7 +85,6 @@
     justify-content: center;
     align-items: center;
     user-select: none;
-    background: #19232cfe;
     box-shadow: rgb(7, 7, 7) 0px 20px 30px -10px;
     border-radius: 10px;
     padding: 20px 0px 50px 0px;
@@ -92,8 +92,9 @@
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
-    max-width: 70%;
-    max-height: 70%;
+    max-height: 80%;
+    width: 80%;
+    
 }
 .modalbox-skins:focus{
     outline: none;
@@ -173,29 +174,22 @@
 }
 
 .video-skin {
-    width: 1000px;
-    height: auto;
+    width: 100%;
+
 }
 
 .modalbox-skin-video {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: end;
-    border: none;
+
     user-select: none;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    border-radius: 10px;
-    overflow: hidden;
+    border-radius: 5px;
+ 
 }
 
 .modal-video {
-
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
 }
 
 .icon-watch {
@@ -208,3 +202,15 @@
 .icon-watch:hover {
     color: #ed2a3d;
 }
+@media (max-width: 430px) { 
+    .card-weapon {
+        width: 95%;
+    }
+    .modalbox-skins{
+        width: 95%;
+    }
+    .video-skin{
+        width: 100%;
+        height: auto;
+    }
+  }

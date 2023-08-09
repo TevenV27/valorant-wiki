@@ -8,6 +8,7 @@ const Tarjet = ({ weapon, colors }) => {
   const [openVideo, setOpenVideo] = React.useState(false);
   const [videoUrl, setVideoUrl] = useState('');
   const [isHovered, setIsHovered] = useState(false);
+
   const [isHovered2, setIsHovered2] = useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -60,13 +61,11 @@ const Tarjet = ({ weapon, colors }) => {
           </div>
         </Box>
       </Modal>
+
       <Modal className='modal-video'
         open={openVideo}
         onClose={handleCloseVideo}
-      // Personaliza el contenido del modal para ajustar el ancho del video
-
-      >
-        
+      >  
         <Box className="modalbox-skin-video">
           <video className='video-skin' src={videoUrl} controls></video>
         </Box>
@@ -110,7 +109,6 @@ const Weapons = ({ rol, colors }) => {
 
   return (
     <>
-      <br /><br /><br />
       <div className='container-weapon animate__animated animate__backInUp'>
         {weapons.map((weapon) => (
           <React.Fragment key={weapon.uuid}>

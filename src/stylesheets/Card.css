@@ -55,9 +55,8 @@
 .modalbox-agent {
 
     user-select: none;
-    background: #19232cfe;
     box-shadow: rgb(7, 7, 7) 0px 20px 30px -10px;
-    border-radius: 15px;
+    border-radius: 5px;
     overflow: hidden;
     max-width: 1000px;
 
@@ -66,6 +65,13 @@
 .modalbox-agent:focus {
     outline: none;
 }
+.description-agent-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0px 20px 40px 20px;;
+}
 
 .fullimg-agent {
     width: 400px;
@@ -73,7 +79,6 @@
     height: auto;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.3) 0px -60px 36px -28px inset, rgba(0, 0, 0, 0.3) 0px 60px 36px -28px inset;
-
 
 
 }
@@ -93,9 +98,10 @@
 .ability-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+    
+    align-items: center ;
+    gap: 5px;
+    
 
 
 }
@@ -104,7 +110,7 @@
     width: 50px;
     height: auto;
     background-color: #0E121D;
-    padding: 5px;
+    padding: 3px;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -113,12 +119,20 @@
 
     background: #ed2a3d;
 }
+.ability-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
 
 .ability-container {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 20px;
+    align-items: flex-start;
+    
+    gap: 15px;
 
 }
 
@@ -154,8 +168,9 @@ h3 {
         width: 40px;
     }
 
+
     .modalbox-agent {
-        max-height: 90%;
+
         overflow-y: auto;
         scrollbar-width: thin;
         scrollbar-color: transparent transparent;
@@ -174,4 +189,5 @@ h3 {
         /* Ajusta el color del thumb si lo deseas */
         border-radius: 3px;
     }
+
 }

@@ -3,15 +3,18 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import '../stylesheets/Card.css';
 
-const Tarjet = ({ agent, colors }) => {
-  const [open, setOpen] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
 
+const Tarjet = ({ agent, colors }) => {
+
+  // Estado para la apertura del modal de cada agente
+  const [open, setOpen] = useState(false);
+  // Estado para el hover de cada agente
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Funciones para abrir y cerrar el modal
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
@@ -34,13 +37,11 @@ const Tarjet = ({ agent, colors }) => {
           <Modal className='modal'
             open={open}
             onClose={handleClose}
-            aria-labelledby="parent-modal-title"
-            aria-describedby="parent-modal-description"
           >
             <Box className='modalbox-agent  animate__animated animate__fadeInDownBig' style={{ background: colors.background }}>
               <div className='agent-info '>
                 <img className='fullimg-agent' src={agent.fullPortrait} alt={agent.displayName} style={{ background: colors.card }} />
-                <div style={{ color: colors.text, padding: '10px 50px 30px 30px' }}>
+                <div className='description-agent-box' style={{ color: colors.text }}>
                   <span><h3>Nombre:</h3> {agent.displayName}</span>
                   {agent.role && <span><h3>Rol:</h3>{agent.role.displayName}</span>}
                   {agent.role && <span><h3>Descripcion del rol:</h3>{agent.role.description}</span>}
@@ -49,7 +50,10 @@ const Tarjet = ({ agent, colors }) => {
                     {agent.abilities.map((ability) => (
                       <div className='ability-box' key={ability.uuid}>
                         <img className='ability-image' src={ability.displayIcon} alt={ability.displayName} />
-                        {ability.displayName}
+                        <div className='ability-name'>
+                          {ability.displayName}
+                        </div>
+
                       </div>
                     ))}
                   </div>
@@ -64,10 +68,13 @@ const Tarjet = ({ agent, colors }) => {
   );
 };
 
+// Componente que renderiza las tarjetas de cada agente
 const Card = ({ rol, colors }) => {
   const [agents, setAgents] = useState([]);
   const [error, setError] = useState(null);
 
+
+  // Funcion que hace el fetch de los datos de los agentes
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -80,7 +87,6 @@ const Card = ({ rol, colors }) => {
         if (!response.ok) {
           throw new Error('Failed to fetch agents data');
         }
-
         const data = await response.json();
         setAgents(data.data);
       } catch (error) {
@@ -95,6 +101,7 @@ const Card = ({ rol, colors }) => {
     return <div>Error: {error}</div>;
   }
 
+  // Renderiza las tarjetas de los agentes
   return (
     <>
       <div className="container-card animate__animated animate__backInUp">
