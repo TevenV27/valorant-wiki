@@ -12,8 +12,10 @@
 ```
 # Clone this repository
 $ git clone https://github.com/TevenV27/valorant-wiki.git
+
 # Install dependencies
 $ npm install
+
 # Start project
 $ npm run dev
 ```
