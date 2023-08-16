@@ -32,8 +32,15 @@ body::-webkit-scrollbar-track{
   background-color: transparent;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+
 body::-webkit-scrollbar-thumb{
   background-color: transparent;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+:root{
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .Owner{

@@ -5,6 +5,7 @@
 }
 
 .container-map {
+    min-height: calc(100vh - 70px);
     padding: 0px 0px 100px 0px;
     display: flex;
     flex-direction: row;
